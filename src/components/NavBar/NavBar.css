@@ -1,0 +1,19 @@
+.navBarColor{
+    background-color: rgba(213, 223, 223, 0.603);
+}
+
+.navColor{
+    background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+}
+
+.widthLogo{
+    width: 200px;
+}
+
+a{
+    font-size: 15 !important;
+}
+
+.iconCart{
+    font-size: 20;
+}

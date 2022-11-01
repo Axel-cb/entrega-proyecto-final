@@ -1,0 +1,11 @@
+.greetingStyle{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+.cardAlign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
