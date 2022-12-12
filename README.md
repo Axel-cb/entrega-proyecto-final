@@ -1,10 +1,30 @@
-# Getting Started with Create React App
+# Bazar mayorista Caillet bois
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Somos un e-commerce en construcción enfocado a articulos de bazar.
 
-## Available Scripts
+# ¿Que es un E-Commerce?
 
-In the project directory, you can run:
+En esencia, el comercio electrónico o E-Commerce es solo la compra y venta de bienes y servicios utilizando Internet, cuando compras en línea.
+
+##  Ventajas del E-Commerce:
+
+-   **Costes bajos de puesta en marcha y funcionamiento**: Por lo general, iniciar un negocio de E-Commerce es mucho más barato que abrir una tienda física porque no hay costes de alquiler ni de inmuebles, y puedes empezar con menos empleados.
+-   **Ofrece flexibilidad**: El E-Commerce es una solución más flexible para las empresas y sus clientes porque estos pueden comprar en cualquier momento del día y desde cualquier lugar.
+-   **Fácil de compaginar con el marketing basado en datos**: Tu tienda de E-Commerce puede proporcionarte un montón de datos de marketing a través de  [análisis e informes](https://mailchimp.com/features/reports-and-analytics/)  para ayudarte a tomar mejores decisiones para la promoción de tu negocio.
+-   **Amplia selección de productos disponibles**: El E-Commerce ofrece una mayor variedad de productos a los clientes en comparación con las tiendas físicas, que solo pueden mantener un inventario limitado en su espacio físico.
+
+## Esta página contiene las siguientes funciones:
+
+-   Listado/catalogo de productos en forma de "cards".
+- Sección con fácil acceso para ver detalles del producto.
+- Opción para agregar los productos al carrito de compras.
+- Formulario de checkeo antes de efectuar la compra entregandole el ID de la compra al cliente.
+
+## En ésta página utilizé:
+
+React JS Versión: 18.2.0
+
+
 
 ### `npm start`
 

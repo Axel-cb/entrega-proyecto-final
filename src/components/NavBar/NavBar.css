@@ -18,10 +18,33 @@ a{
     font-size: 20;
 }
 
+.hoverLinks{
+    color: #0000006b;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 15px;
+}
+
 .hoverLinks:hover{
     background-color: rgba(0, 0, 0, 0.315);
     color: rgba(255, 255, 255, 0.753) !important;
     text-decoration: dashed;
     transition: all ;
     font-weight: bold;
+    border-radius: 10%;
+}
+
+.cartViewCss{
+    color: #000000;
+    margin: 10px;
+}
+
+.counterCartCSS{
+    color: greenyellow;
+    display: flex;
+    flex-direction: inherit;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    font-size: 20px;    
 }

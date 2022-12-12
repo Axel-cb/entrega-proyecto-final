@@ -1,14 +1,27 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import ButtonCard from "../ButtonCard/ButtonCard"
 import ItemCount from '../ItemCount/ItemCount';
 import {Link as LinkRouter} from "react-router-dom"
 import "./itemDetail.css"
+import { useContext, useState } from 'react';
+import { cartContext } from '../../context/cartContext';
+import ButtonCard from '../ButtonCard/ButtonCard';
 
 
 
 function ItemDetail({product}) {
     const urlDetail = `/item/${product.id}`
+    const [isInCart, setIsInCart] = useState (false)
+    const {addToCart, cart} = useContext(cartContext);
+    
+    function onAddToCart(count){
+      setIsInCart(count)
+      addToCart(product, count)
+    }
+
+let itemAdjust = cart.find(itemInCart => itemInCart.id === product.id)
+let stockUpdated = itemAdjust ? product.stock - itemAdjust.count : product.stock
+ 
     return (
         <div className='container itemDetailCard'>
       <Card style={{ width: '30rem' }} className= "cardAlign">
@@ -19,10 +32,13 @@ function ItemDetail({product}) {
           <Card.Text>
           ${product.precio}
           </Card.Text>
-          <ItemCount/>
-  <LinkRouter to= {urlDetail}>
-          <ButtonCard>Agregar al carrito</ButtonCard>
-          </LinkRouter>          
+          {isInCart ? (
+        <LinkRouter to="/cart">
+          <ButtonCard>Ir al Carrito</ButtonCard>
+        </LinkRouter>
+      ) : (
+        <ItemCount onAddToCart={onAddToCart} stock={stockUpdated} />
+      )}
         </Card.Body>
       </Card>
       </div>

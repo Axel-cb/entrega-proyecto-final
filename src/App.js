@@ -6,19 +6,31 @@ import "./components/ItemList/Item.css"
 import "./index.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import { CartContextProvider } from './context/cartContext';
+import CartView from './components/CartView/CartView';
+import ThankYouForBuy from './components/ThankYouForBuy/ThankYouForBuy';
+
 
 
 function App() {
+  
   return (
+    
+    <CartContextProvider>
      <BrowserRouter>
      <NavBar/> 
       <Routes>                        
      <Route path='/' element= {<ItemListContainer/>}/>
      <Route path='/item/:idItem' element= {<ItemDetailContainer/>}/>
      <Route path='/category/:id' element= {<ItemListContainer/>}/>     
-     <Route path='*' element= {<p>Error 404: página no encontrada</p>}/>     
+     <Route path="/cart" element={<CartView />}/>    
+     <Route path="/thankYouForBuy/:idOrder" element={<ThankYouForBuy/>}/>
+     <Route path="*" element={<h1>Error 404: Esta página no existe</h1>}
+            />   
       </Routes>      
-      </BrowserRouter>        
+      </BrowserRouter> 
+      </CartContextProvider>    
+      
   );
 }
 

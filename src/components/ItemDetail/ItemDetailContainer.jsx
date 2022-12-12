@@ -1,23 +1,35 @@
 import ItemDetail from './ItemDetail';
 import {useState, useEffect} from "react"
 import {useParams} from "react-router-dom"
-import { getSingleItem } from '../../services/mockService';
-
+import { getSingleItem } from '../../services/firestore';
+import "../Loaders/loaders.css"
+import Loaders from '../Loaders/Loaders'
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 const {idItem} = useParams()
 
 async function getItemsAsync() {
-  let respuesta = await getSingleItem(idItem);
-  setProduct(respuesta);
+  getSingleItem(idItem).then(respuesta =>{
+    setProduct(respuesta)
+    setIsLoading(false);
+  });
+
 }
 
 useEffect(() => {
   getItemsAsync();
 }, [idItem]);
 
-return <ItemDetail product={product} />;
+if(isLoading)
+return( <div className='loaderCenter'><Loaders/></div>)
+
+
+return (
+<ItemDetail product={product} />
+)
+
 }
 
 

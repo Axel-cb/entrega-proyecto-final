@@ -4,11 +4,10 @@ import  "./buttonCard.css"
 
 function ButtonCard(props) {
 
-    function handleClick(){            
-    }
+   
 
   return (
-    <button className='buttonCard' onClick= {handleClick}>{props.children}</button>
+    <button disabled={props.disabled} className='buttonCard' onClick= {props.onClick}>{props.children}</button>
   );
 }
 

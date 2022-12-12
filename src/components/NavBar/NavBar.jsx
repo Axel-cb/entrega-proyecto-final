@@ -4,21 +4,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from "./CartWidget"
 import "./NavBar.css"
+import {Link as LinkRouter} from "react-router-dom"
 
 
 function NavBar() {
   return (
     <Navbar  expand="lg" className='navColor'>
-      <Nav.Link href="/"><img src="../../imagenes/lumilagro-removebg-preview.png" alt='lumilagro' className='widthLogo' /></Nav.Link>     
+      <LinkRouter to= "/"><img src="../../imagenes/lumilagro-removebg-preview.png" alt='lumilagro' className='widthLogo' />          
+          </LinkRouter>      
+           
       <Container className='navBarColor'>
-        <Navbar.Brand href="/" className='hoverLinks'>Inicio</Navbar.Brand>
+      <LinkRouter to= "/" className='hoverLinks'>Inicio          
+          </LinkRouter>   
+       
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/category/Termo acero" className='hoverLinks'>Termo acero</Nav.Link>
-            <Nav.Link href="/category/Termo vidrio" className='hoverLinks'>Termo vidrio</Nav.Link>
-            <Nav.Link href="/category/Bidón" className='hoverLinks'>Bidón</Nav.Link> 
-            <Nav.Link href="/category/Termo vidrio clubes" className='hoverLinks'>Termo vidrio clubes</Nav.Link>             
+          <Nav className="me-auto">   
+                
+          <LinkRouter to= "/category/Termo acero" className='hoverLinks'>Termo acero          
+          </LinkRouter>              
+          <LinkRouter to= "/category/Termo vidrio" className='hoverLinks'>Termo vidrio          
+          </LinkRouter>              
+          <LinkRouter to= "/category/Bidón" className='hoverLinks'>Bidón          
+          </LinkRouter>   
+          <LinkRouter to= "/category/Termo vidrio clubes" className='hoverLinks'>Termo vidrio clubes          
+          </LinkRouter>                           
           </Nav>
         </Navbar.Collapse>
        <CartWidget/>

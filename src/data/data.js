@@ -1,12 +1,13 @@
 const products = [    
         {
             id: 1,
-            imagen: "/imagenes/acero-arg.avif",
+            imagen: "/imagenes/acero-blanco.avif",
             nombre: "Termos de Acero Luminox en Colores – Blanco",
             precio: 10152,
-            stock: 12,
+            stock: 1,
             category: "Termo acero",
-            detail: "- Altura: 34 - Diámetro de la Base: 8 cm - Altura de la tapa: 8 cm - Diámetro de la boca: 5,5 cm"            
+            detail: "- Altura: 34 - Diámetro de la Base: 8 cm - Altura de la tapa: 8 cm - Diámetro de la boca: 5,5 cm" 
+
         },
         {
             id: 2,
@@ -60,7 +61,8 @@ const products = [
             precio: 2463,
             stock: 3,
             category: "Termo vidrio",
-            detail: "- Altura: 34 - Diámetro de la Base: 8 cm - Altura de la tapa: 8 cm - Diámetro de la boca: 5,5 cm"
+            detail: "- Altura: 34 - Diámetro de la Base: 8 cm - Altura de la tapa: 8 cm - Diámetro de la boca: 5,5 cm",
+            descuento: "12%"
         },
         {
             id: 8,

@@ -1,41 +1,37 @@
-import Item from './Item'
-import getItems from '../../services/mockService'
+import getItems, { getItemsByCategory } from '../../services/firestore'
 import {useState, useEffect} from "react"
 import {useParams} from "react-router-dom"
+import ItemList from './ItemList'
+import Loaders from '../Loaders/Loaders'
+import "../Loaders/loaders.css"
+
+
+
 
 function ItemListContainer() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(null)
 const {id} = useParams()
 
-  useEffect(
-    () =>{
-      getItems(id)
-  .then((respuestaItems) => {
-    setProducts(respuestaItems)
-  })
-    },
-    [id]
-  )
 
-  return (
-    <div className='container containerCards'>      
-    
- {products.map((product) => {
-  return(
-    <Item 
-    key= {product.id}    
-    id= {product.id}
-    imagen= {product.imagen}
-    nombre= {product.nombre}
-    precio= {product.precio}
-    category= {product.category}  
-    stock= {product.stock}
-    />    
- )
-   })}
-   </div>
-   
-  )
+async function getItemsAsync() {
+  if( !id){
+    let respuesta = await getItems();
+    setProducts(respuesta);
+  }
+  else {
+    let respuesta = await getItemsByCategory(id)
+    setProducts(respuesta)
+  }
+  
+}
+
+useEffect(() => {
+  getItemsAsync();    
+}, [id]);
+
+  return <>
+      {products ? <ItemList products={products} /> : <div className='loaderCenter'><Loaders/></div>}
+      </>
 }
 
 
