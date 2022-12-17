@@ -24,7 +24,6 @@ export function CartContextProvider({ children }) {
   function clearCart() {    
     setCart([])
   }
-
   function removeItem() {
     const newCart = [...cart];
     newCart.pop();

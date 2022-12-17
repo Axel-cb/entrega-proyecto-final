@@ -1,6 +1,7 @@
 # Bazar mayorista Caillet bois
 
 Somos un e-commerce en construcción enfocado a articulos de bazar.
+link: https://singular-dusk-f7f0b4.netlify.app
 
 # ¿Que es un E-Commerce?
 
