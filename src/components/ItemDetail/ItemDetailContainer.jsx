@@ -5,6 +5,7 @@ import { getSingleItem } from '../../services/firestore';
 import "../Loaders/loaders.css"
 import Loaders from '../Loaders/Loaders'
 
+
 function ItemDetailContainer() {
   const [product, setProduct] = useState([])
   const [isLoading, setIsLoading] = useState(true)

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ButtonCard from "../ButtonCard/ButtonCard";
+import ThankYouForBuy from "../ThankYouForBuy/ThankYouForBuy";
 
 export default function CartForm(props) {
   const [data, setData] = useState({
@@ -65,10 +66,12 @@ export default function CartForm(props) {
         />
       </div>
 
-      <ButtonCard
+      <ButtonCard 
         disabled={data.name === "" || data.phone === "" || data.email === ""}
-        type="submit"
+        type="submit" 
+        
       >
+        
         Finalizar Compra
       </ButtonCard>
     </form>

@@ -17,6 +17,7 @@ function handleResta(){
 
 }
 
+
   return (
     <div className='counterButton'>
       <div className='countCSS'>
@@ -26,9 +27,8 @@ function handleResta(){
         </div>
         <div>
           <ButtonCard disabled={stock<=0} onClick= { ()=> onAddToCart(count)}>Agregar al carrito</ButtonCard>
-        </div>
-    </div>
-   
+        </div>    
+    </div>   
   )
 }
 

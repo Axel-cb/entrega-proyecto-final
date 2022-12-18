@@ -30,10 +30,14 @@ export function CartContextProvider({ children }) {
     setCart(newCart);
   }
 
-  function itemsInCart() {
-    let total = 0;
+  function itemsInCart() {   
+    let total = 0;   
     cart.forEach((itemInCart) => (total = total + itemInCart.count));
+  if(total ===0){
+    total=undefined
+  }
     return total;
+  
   }
 
   function priceInCart() {

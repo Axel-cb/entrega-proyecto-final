@@ -12,25 +12,24 @@ import ThankYouForBuy from './components/ThankYouForBuy/ThankYouForBuy';
 
 
 
+
 function App() {
   
-  return (
-    
-    <CartContextProvider>
+  return (    
+    <CartContextProvider>      
      <BrowserRouter>
-     <NavBar/> 
-      <Routes>                        
+     <NavBar/>      
+      <Routes>                         
      <Route path='/' element= {<ItemListContainer/>}/>
      <Route path='/item/:idItem' element= {<ItemDetailContainer/>}/>
      <Route path='/category/:id' element= {<ItemListContainer/>}/>     
      <Route path="/cart" element={<CartView />}/>    
      <Route path="/thankYouForBuy/:idOrder" element={<ThankYouForBuy/>}/>
-     <Route path="*" element={<h1>Error 404: Esta página no existe</h1>}
-            />   
-      </Routes>      
-      </BrowserRouter> 
+     <Route path="*" element={<h1>Error 404: Esta página no existe</h1>}/>        
+      </Routes>       
+      </BrowserRouter>      
       </CartContextProvider>    
-      
+     
   );
 }
 
